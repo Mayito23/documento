@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario Básico</title>
+    <link rel="stylesheet" href="estilo_for.css">
+</head>
+<body>
+    <h1>Formulario Básico</h1>
+    <form action="/registro" method="post">
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Escriba su nombre completo" title="Por favor ingrese su nombre completo" required minlength="8" maxlength="12"><br><br>
+
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" name="correo" placeholder="Ingrese su correo" title="Por favor ingrese su email" required minlength="8" maxlength="50"><br><br>
+
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" 
+               placeholder="Ingrese su contraseña" 
+               title="Debe tener al menos una letra mayúscula, un número y un símbolo" 
+               pattern="(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,12}" 
+               required><br><br>
+               
+        <label>Género:</label>
+        <label for="masculino"><input type="radio" id="Masculinno" name="genero" value="M">Masculino</label>
+        <label for="femenino">  <input type="radio" id="Femenino" name="genero" value="F">Femenino</label><br>
+    
+
+        <label>Intereses:</label>
+        <label for="musica">  <input type="checkbox" id="musica" name="intereses" value="Musica"> Música</label>
+        <label for="deportes"><input type="checkbox" id="deportes" name="intereses" value="Deporte"> Deportes</label><br>
+
+        <label for="pais">País:</label>
+        <select id="pais" name="pais" required>
+            <option value="">Seleccione su país</option>
+            <option value="MX">México</option>
+            <option value="CO">Colombia</option>
+            <option value="AR">Argentina</option>
+            <option value="ES">España</option>
+        </select><br><br>
+
+        <label for="comentarios">Comentarios:</label><br>
+        <textarea id="comentarios" name="comentarios" rows="4" cols="50" placeholder="Escriba su comentario" required title="Debe completar el campo comentario"></textarea><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
