@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina de Manetflix</title>
+    <link rel="stylesheet" href="estilo_ma.css">
+</head>
+
+<body>
+    <div class="barra_superior">
+        <h1 id="titulo">MANETFLIX</h1>
+        <div class="menu-superior">
+            <div class="idiomas">
+                <select>
+                    <option value="es"> 🗣️Español</option>
+                    <option value="en">🗣️Inglés</option>
+                </select>
+                <button>👉Inicio</button>
+            </div>
+        </div>
+        <div class="contenido">
+            <h2>Películas y series ilimitadas y mucho <br> más</h2>
+            <h3>A partir de $18.900. Cancela cuando quieras.</h3>
+            <h5>¿Quieres ver Netflix ya? Ingresa tu email para crear una cuenta o reiniciar tu <br> membresía de
+                Netflix.</h5>
+            <form class="Email">
+                <input type="Email" id="Email" name="Email" placeholder="Email" title="Ingresa el email" required
+                    minlength="8" maxlength="50">
+                <button type="submit">Comenzar</button><br><br>
+            </form>
+        </div>
+    </div>
+
+    <div class="carrusel">
+        <div class="carrusel-contenedor">
+            <h1>Top 20 de peliculas/serie recomendadas</h1>
+            <h3>Dale click a la pelicula para que puedas ver el traile</h3><br><br>
+            <button class="carrusel-btn izquierda">&#10094;</button>
+            <div class="carrusel-items">
+                <div class="pelicula" data-video="video/trailer1.mp4">
+                    <div class="numero">1</div><img src="imagen/pelicula1.jpg" alt="Pelicula 1">
+                </div>
+                <div class="pelicula"data-video="video/trailer2.mp4">
+                    <div class="numero">2</div><img src="imagen/pelicula2.jpg" alt="Pelicula 2">
+                </div>
+                <div class="pelicula"data-video="video/trailer3.mp4">
+                    <div class="numero">3</div><img src="imagen/pelicula3.jpg" alt="Pelicula 3">
+                </div>
+                <div class="pelicula" data-video="video/trailer4.mp4">
+                    <div class="numero">4</div><img src="imagen/pelicula4.jpg" alt="Pelicula 4">
+                </div>
+                <div class="pelicula"data-video="video/trailer5.mp4">
+                    <div class="numero">5</div><img src="imagen/pelicula5.jpg" alt="Pelicula 5">
+                </div>
+                <div class="pelicula" data-video="video/trailer6.mp4">
+                    <div class="numero">6</div><img src="imagen/pelicula6.jpg" alt="Pelicula 6">
+                </div>
+                <div class="pelicula"data-video="video/trailer7.mp4">
+                    <div class="numero">7</div><img src="imagen/pelicula7.jpg" alt="Pelicula 7">
+                </div>
+                <div class="pelicula"data-video="video/trailer8.mp4">
+                    <div class="numero">8</div><img src="imagen/pelicula8.jpg" alt="Pelicula 8">
+                </div>
+                <div class="pelicula"data-video="video/trailer9.mp4">
+                    <div class="numero">9</div><img src="imagen/pelicula9.jpg" alt="Pelicula 9">
+                </div>
+                <div class="pelicula" data-video="video/trailer10.mp4">
+                    <div class="numero">10</div><img src="imagen/pelicula10.jpg" alt="Pelicula 10">
+                </div>
+                <div class="pelicula"data-video="video/trailer11.mp4">
+                    <div class="numero">11</div><img src="imagen/pelicula11.jpg" alt="Pelicula 11">
+                </div>
+                <div class="pelicula"data-video="video/trailer12.mp4">
+                    <div class="numero">12</div><img src="imagen/pelicula12.jpg" alt="Pelicula 12">
+                </div>
+                <div class="pelicula"data-video="video/trailer13.mp4">
+                    <div class="numero">13</div><img src="imagen/pelicula13.jpg" alt="Pelicula 13">
+                </div>
+                <div class="pelicula"data-video="video/trailer14.mp4">
+                    <div class="numero">14</div><img src="imagen/pelicula14.jpg" alt="Pelicula 14">
+                </div>
+                <div class="pelicula"data-video="video/trailer15.mp4">
+                    <div class="numero">15</div><img src="imagen/pelicula15.jpg" alt="Pelicula 15">
+                </div>
+                <div class="pelicula"data-video="video/trailer16.mp4">
+                    <div class="numero">16</div><img src="imagen/pelicula16.jpg" alt="Pelicula 16">
+                </div>
+                <div class="pelicula"data-video="video/trailer17.mp4">
+                    <div class="numero">17</div><img src="imagen/pelicula17.jpg" alt="Pelicula 17">
+                </div>
+                <div class="pelicula"data-video="video/trailer18.mp4">
+                    <div class="numero">18</div><img src="imagen/pelicula18.jpg" alt="Pelicula 18">
+                </div>
+                <div class="pelicula"data-video="video/trailer19.mp4">
+                    <div class="numero">19</div><img src="imagen/pelicula19.jpg" alt="Pelicula 19">
+                </div>
+                <div class="pelicula"data-video="video/trailer20.mp4">
+                    <div class="numero">20</div><img src="imagen/pelicula20.jpg" alt="Pelicula 20">
+                </div>
+                 <div class="pelicula">
+                    <div class="numero">20</div><img src="imagen/pelicula20.jpg" alt="Pelicula 20">
+                </div>
+            </div>
+            <button class="carrusel-btn derecha">&#10095;</button>
+        </div>
+    </div>
+     <div id="trailerModal" class="modal">
+      <div class="modal-contenido">
+        <span class="cerrar">&times;</span>
+        <video id="trailerVideo" width="100%" controls autoplay></video>
+      </div>
+    </div>
+
+    <script>
+        const carruselItems = document.querySelector('.carrusel-items');
+        const btnIzq = document.querySelector('.carrusel-btn.izquierda');
+        const btnDer = document.querySelector('.carrusel-btn.derecha');
+
+
+        let currentIndex = 0;
+        const cardWidth = 320;
+        const visibleCards = Math.floor(document.querySelector('.carrusel-contenedor').offsetWidth / cardWidth);
+        const maxIndex = carruselItems.children.length - visibleCards;
+
+        btnIzq.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarrusel();
+        }
+        });
+
+        btnDer.addEventListener('click', () => {
+        if (currentIndex < maxIndex) {
+            currentIndex++;
+            updateCarrusel();
+        }
+        });
+
+        function updateCarrusel() {
+        const offset = currentIndex * cardWidth;
+        carruselItems.style.transform = `translateX(-${offset}px)`;
+        }
+
+        function nextSlide() {
+        currentIndex++;
+        if (currentIndex > maxIndex) {
+            currentIndex = 0;
+        }
+        updateCarrusel();
+        }
+
+        let autoScroll = setInterval(nextSlide, 850);
+
+        carruselItems.addEventListener('mouseenter', () => {
+        clearInterval(autoScroll);
+        });
+
+        carruselItems.addEventListener('mouseleave', () => {
+        autoScroll = setInterval(nextSlide, 3000);
+        });
+      
+        const videoModal = document.getElementById("trailerModal");
+        const trailerVideo = document.getElementById("trailerVideo");
+        const cerrarModal = document.querySelector(".cerrar");
+     
+
+        document.querySelectorAll(".pelicula").forEach(pelicula => {
+            pelicula.addEventListener("click", () => {
+                const videoSrc = pelicula.getAttribute("data-video");
+                if (videoSrc) {
+                    trailerVideo.src = videoSrc;
+                    trailerVideo.play();
+                    videoModal.style.display = "block";
+                }
+            });
+        });
+
+        cerrarModal.onclick = () => {
+            videoModal.style.display = "none";
+            trailerVideo.pause();
+            trailerVideo.currentTime = 0;
+        };
+
+        window.onclick = (event) => {
+            if (event.target == videoModal) {
+                videoModal.style.display = "none";
+                trailerVideo.pause();
+                trailerVideo.currentTime = 0;
+            }
+        };
+
+        window.onload = () => {
+  
+};
+
+
+    </script>
+
+    <div class="Cuadro_informacion">
+    <div class="cuadro_contenido">
+        <h3 class="titulo_info">😉​Mas motivo para unirte 😉​</h3>
+        <div class="contenedor_info">
+            <div class="informacion">
+                <h2>Disfruta en tu Tv</h2>
+                <p>Ve en smart TV, PlayStation, Xbox, Chromecast, Apple TV, reproductores de Blu-ray y más.</p>
+                <img src="https://www.shutterstock.com/image-photo/woman-watching-tv-series-movies-260nw-2001349058.jpg" alt="Tv">
+            </div>
+            <div class="informacion">
+                <h2>Descarga tus series para verlas offline</h2>
+                <p>Guarda tu contenido favorito y siempre tendrás algo para ver.</p>
+                <img src="https://i.blogs.es/2e0733/captura-de-pantalla-609-/1366_2000.png" alt="descarga">
+            </div>
+            <div class="informacion">
+                <h2>Disfruta donde quieras</h2>
+                <p>Películas y series ilimitadas en tu teléfono, tablet, laptop y TV.</p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0tQIhBkLfmVKU-IEJwi4zAMLzFNbJ_mYG4A&s" alt="disfruta">
+            </div>
+            <div class="informacion">
+                <h2>Crea perfiles para niños</h2>
+                <p>Los niños vivirán aventuras con sus personajes favoritos en un espacio diseñado exclusivamente para ellos.</p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_KQrYgKNLI1OfiWINgPlpYckDX99b8SP5YA&s" alt="niños">
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+    <footer class="footer">
+    <div class="footer-contacto">
+      <p>¿Preguntas? Llama al <a href="tel:018009171564">03 475 389 1415</a></p>
+    </div>
+    <div class="footer-links">
+      <ul>
+        <li><a href="#">Preguntas frecuentes</a></li>
+        <li><a href="#">Formas de ver</a></li>
+        <li><a href="#">Información corporativa</a></li>
+        <li><a href="#">Solo en Meflix</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Centro de ayuda</a></li>
+        <li><a href="#">Empleo</a></li>
+        <li><a href="#">Términos de uso</a></li>
+        <li><a href="#">Contáctanos</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Cuenta</a></li>
+        <li><a href="#">Canjear tarjetas de regalo</a></li>
+        <li><a href="#">Privacidad</a></li>
+        <li><a href="#">Prueba de velocidad</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Prensa</a></li>
+        <li><a href="#">Comprar tarjetas de regalo</a></li>
+        <li><a href="#">Preferencias de cookies</a></li>
+        <li><a href="#">Avisos legales</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-idioma">
+      <select name="Idioma" id="idioma">
+        <option>Español</option>
+        <option>Inglés</option>
+      </select>
+    </div>
+
+    <div class="footer-copy">
+      <p>Meflix</p>
+      <p>Esta página está inspirada de Netflix.... <a href="#">Más info.</a></p>
+    </div>
+ </footer>
+</body>
+
+</html>
